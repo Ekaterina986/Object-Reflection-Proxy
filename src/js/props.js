@@ -1,4 +1,4 @@
-export function orderByProps(obj, sort) {
+export default function orderByProps(obj, sort) {
     // console.log(obj, sort);
 
     const sort2 = [];
@@ -9,7 +9,6 @@ export function orderByProps(obj, sort) {
         }
     }
     sort2.sort();
-    console.log(222222, sort2);
     const res = [];
     for (const i in sort) {
         const key = sort[i];

@@ -1,15 +1,3 @@
-// TODO: write your code here
-import sum from './basic';
-import { orderByProps } from './props';
-import { getAttack } from './destructuring';
-
-console.log('worked1');
-
-console.log(sum([1, 2]));
-
-;
-
-
 const character = {
     name: 'Лучник',
     type: 'Bowman',
@@ -32,6 +20,19 @@ const character = {
       }
     ]	
   }
-const res = getAttack(character)
-console.log(res)
-
+  const {special, name, type} = character;
+  // const special = character.special;
+  // getAttack(character)
+  export function getAttack({special}) {
+  // {special} = character
+  // export function getAttack(a) {
+    // a = character
+     return special.map((item) => {
+        return {
+            id: item.id,
+            name: item.name,
+            icon: item.icon,
+            description: item.description === undefined ? 'Описание недоступно' : item.description
+        }
+     })
+  }
